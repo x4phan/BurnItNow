@@ -1,0 +1,3 @@
+Flash - pip install Flask	
+scikit-learn - pip install scikit-learn
+xgboost- pip install xgboost
