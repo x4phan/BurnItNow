@@ -1,0 +1,397 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    
+}
+.contactbg3-image {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -9999; /* Ensure it's behind other content */
+    
+}
+
+
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Change background to pure white for a cleaner look */
+    width: 750px;
+    padding: 30px;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 100px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Increase border radius for a softer look */
+}
+
+/* Form Styles */
+#contact-form {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+#contact-form label {
+    color: #555; /* Darker text for better readability */
+    display: block;
+    font-size: 16px; /* Slightly increase font size */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f5f5f5; /* Lighter background color */
+    color: #333; /* Darker text for better contrast */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    background-color: #e0e0e0; /* Slightly darker on focus */
+    box-shadow: 0 0 0 2px #ff5a5f; /* More prominent focus shadow */
+}
+
+#contact-form textarea {
+    resize: none;
+    overflow-y: auto;
+}
+
+/* Button Styles */
+#contact-form button[type="submit"] {
+    width: auto;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff5a5f, #ff5a5f);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 120px;
+}
+
+#contact-form button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ff5a5f, #e64040);
+}
+
+#contact-form button[type="submit"]:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ff5a5f, #b9191e);
+}
+
+/* Topic Buttons */
+.topics {
+    margin-bottom: 20px;
+}
+
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.topic-buttons label {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff5a5f, #ff5a5f);
+    color: #fff;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.topic-buttons label:hover:not(:checked) {
+    background: linear-gradient(135deg, #ff5a5f, #e64040);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+}
+
+.topic-buttons input[type="radio"] {
+    display: inline-block;
+}
+
+.topic-buttons input[type="radio"]:checked + label {
+    background: linear-gradient(135deg, #ff5a5f, #b9191e);
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+.topic-buttons label:active {
+    transform: scale(0.97);
+}
+
+/* Add transitions for smooth scaling */
+.topic-buttons label {
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/*
+.contactbg-image {
+    position: fixed;
+    top: 74%;
+    right: 1%;
+    transform: translateY(-50%);
+    z-index: -1000;
+    width: 800px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.contactbg1-image {
+    position: fixed;
+    top: 74%;
+    right: 43%;
+    transform: translateY(-50%);
+    z-index: -1000;
+    width: 800px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.contactbg2-image {
+    position: fixed;
+    top: 74%;
+    right: 85%;
+    transform: translateY(-50%);
+    z-index: -1000;
+    width: 800px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+*/
+.location-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.location-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.location-section p {
+    margin-bottom: 120px;
+    font-size: 18px;
+    color: #ffffff;
+}
+.map-container {
+    position: relative;
+    width: 100%; /* Extend width closer to the edge */
+    max-width: 1900x; /* Increase maximum width for larger screens */
+    margin: 0 auto; /* Center the map */
+    padding-bottom: 25%; /* Maintain horizontal panel aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin-bottom: 70px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 15px; /* Ensure iframe inherits rounded corners */
+}
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.nav-link.current {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}
+
+
+

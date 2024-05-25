@@ -1,0 +1,515 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 120px;
+}
+
+.about-content {
+    margin-bottom: 40px;
+}
+
+.about-content h2 {
+    font-size: 36px; /* Increase font size */
+    margin-bottom: 30px; /* Add more spacing */
+    color: #2c3e50; /* Darken text color */
+}
+
+.about-content p {
+    font-size: 18px; /* Maintain font size */
+    line-height: 1.8; /* Increase line height for better readability */
+    margin-bottom: 40px; /* Add more spacing */
+    color: #555; /* Slightly darken text color */
+}
+
+#read-more-btn {
+    background-color: #ff5252; /* Red background color */
+    color: #fff; /* White text color */
+    padding: 14px 28px; /* Increased padding */
+    text-decoration: none;
+    border-radius: 25px; /* More rounded edges */
+    font-size: 18px; /* Increased font size */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#read-more-btn:hover {
+    background-color: #e64040; /* Darker red on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+
+.extra-spacing {
+    margin-bottom: 80px; /* Add 40px more spacing from the bottom */
+}
+
+.project-info {
+    margin-bottom: 40px;
+}
+
+.project-info h2 {
+    font-size: 36px; /* Increase font size */
+    margin-bottom: 30px; /* Add more spacing */
+    color: #2c3e50; /* Darken text color */
+}
+
+.project-info .project-description {
+    font-size: 18px; /* Maintain font size */
+    line-height: 1.8; /* Increase line height for better readability */
+    margin-bottom: 40px; /* Add more spacing */
+    color: #555; /* Slightly darken text color */
+}
+
+.slideshow-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* Adjust the gap between members */
+    padding: 20px 0; /* Add padding if needed */
+    margin-bottom: -60px; /* Increase spacing under the container */
+    scroll-snap-type: x mandatory; /* Enable horizontal snap scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.slideshow-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Webkit browsers */
+}
+
+.member-container {
+    flex: 0 0 auto;
+    width: 1000px; /* Increase width for bigger container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+    scroll-snap-align: start; /* Snap to the start of each member container */
+}
+
+
+.member-container:hover {
+    transform: translateY(-5px); /* Move up on hover */
+    background-color: #fff; /* Change background color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
+.member-section {
+    position: relative;
+}
+
+.member-section .member {
+    display: flex;
+    flex-direction: row; /* Ensure a row layout */
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* Use white background for members */
+    border-radius: 20px; /* Increase border radius for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+    transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.member-section .member:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.member-section .member-image {
+    width: 150px; /* Increase width for bigger images */
+    height: 150px; /* Increase height for bigger images */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.member-section .member-info {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    user-select: none; /* Make all text unselectable */
+}
+
+.member-section .member-info h3 {
+    font-size: 24px; /* Increase font size for name */
+    margin-bottom: 5px; /* Decrease margin for compactness */
+}
+
+.member-section .member-info p {
+    font-size: 16px; /* Keep font size consistent */
+    margin: 0; /* Remove default margin */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Use semi-transparent background */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%; /* Make buttons circular */
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Lighten background on hover */
+}
+
+.prev {
+    left: -40px; /* Adjust position */
+}
+
+.next {
+    right: -40px; /* Adjust position */
+}
+
+/* Fun fact popup styles */
+.fun-fact-popup {
+    position: fixed;
+    top: 70%;
+    right: -500px; /* Initially hidden */
+    width: 300px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.fun-fact-popup .fun-fact-content {
+    position: relative;
+    text-align: center;
+}
+
+.fun-fact-popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fun-fact-popup p {
+    font-size: 16px;
+}
+
+.fun-fact-popup button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+}
+
+.fun-fact-popup button:hover {
+    background-color: #a3383c;
+}
+
+.close-button {
+    position: absolute;
+    top: -40px;
+    right: -13px;
+    background-color: transparent;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 40px; /* Add explicit width */
+    height: 30px; /* Add explicit height */
+    box-sizing: border-box; /* Include padding and border in width and height */
+    display: inline-block; /* Ensure it behaves like a button */
+}
+
+.close-button:hover {
+    background-color: #a3383c;
+}
+#more-fun-facts {
+    text-transform: none; /* Ensure text is not transformed to all caps */
+    width: auto; /* Optional: Adjust the width as necessary */
+    padding: 5px 10px; /* Adjust padding as needed */
+    display: inline-block; /* Ensure button size adjusts with content */
+    font-size: 16px; /* Adjust font size */
+    background-color:  #ff5a5f; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none;
+
+}
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.nav-link.current {
+    background-color: #ff5a5f;
+    color: white;
+}
+.image-container {
+    position: relative; /* Change position to absolute */
+    top: -35px; /* Position from the center vertically */
+    right: 0; /* Position from the center horizontally */
+    margin-left: 1000px;
+    transform: translate(-50%, -50%); /* Center the container */
+    width: 100%; /* Adjust width to fit the content */
+    max-width: 700px; /* Set maximum width */
+    height: auto; /* Let height adjust proportionally */
+    z-index: -99;
+    
+}
+
+.member-images {
+    display: inline-block;
+    margin-right: 10px;
+    width: 100px; /* Adjust size of member images */
+    height: 100px; /* Adjust size of member images */
+    border-radius: 50%; /* Make member images circular */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    
+}
+
+.hover-up {
+    animation: hover-up 3s infinite alternate;
+}
+
+.hover-down {
+    animation: hover-down 3s infinite alternate;
+}
+
+@keyframes hover-up {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes hover-down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}
+
+
+@media (max-width: 768px) {
+    .header-content {
+        padding: 10px;
+    }
+
+    .site-title {
+        font-size: 20px;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-panel ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-panel {
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon .line {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px;
+    }
+}

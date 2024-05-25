@@ -1,0 +1,232 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    margin-top: 100px;
+    background: #fff;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex: 1;
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Section Headers */
+h2, h3 {
+    color: #ff5a5f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+h3 {
+    font-size: 24px;
+    cursor: pointer;
+}
+.h3:hover {
+
+    color: #b9191e;
+}
+h3::before {
+    content: '▼';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+h3.active::before {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+    padding-left: 15px;
+    border-left: 2px solid #ff5a5f;
+}
+/* Add border after each section */
+section {
+    border-bottom: 1px solid #ff5a5f;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Increase padding for better appearance */
+    margin: 5px;
+    border-radius: 20px; /* Use a larger border radius for rounded edges */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b9191e;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.nav-link.current {
+    color: #ff5a5f;
+    
+}
+
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}

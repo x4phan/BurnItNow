@@ -1,0 +1,581 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.indexbg {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 50vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -9999; /* Ensure it's behind other content */
+    
+}
+.indexbg1 {
+    position: fixed;
+    top: 0;
+    right: 50%;
+    width: 50vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -9999; /* Ensure it's behind other content */
+    
+}
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+
+.main-container {
+    padding-top: 150px; /* Increase padding-top to create more space below the top panel */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* General form styles */
+form {
+    max-width: 442px;
+    margin: 0 auto;
+    padding: 32px; /* Adjusted padding */
+    border-radius: 16px; /* Slightly larger radius for a smoother look */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque background */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+}
+
+form:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Label styles */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px; /* Slightly reduce margin */
+    color: #333;
+    font-size: 16px; /* Adjust font size */
+}
+
+/* Input and select styles */
+input[type="number"], select {
+    width: 95%;
+    padding: 14px; /* Adjust padding for better touch target */
+    margin-bottom: 16px; /* Adjust margin for better spacing */
+    border: 1px solid #ddd; /* Add a light border */
+    border-radius: 8px; /* Slightly larger radius */
+    font-size: 16px; /* Adjust font size */
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+input[type="number"]::placeholder, select::placeholder {
+    color: #777; /* Slightly darker placeholder */
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #ff5a5f; /* More prominent border on focus */
+    box-shadow: 0 0 8px rgba(255, 90, 95, 0.5); /* Enhance shadow on focus */
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff5a5f, #eb6632);
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* More rounded edges */
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Include box-shadow in transition */
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adjust shadow for a more modern look */
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff7a7f, #ff7745); /* Adjust gradient on hover */
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+button .icon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Add additional styles for icons */
+button .icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Inherit color from button */
+}
+
+
+#result {
+    display: none; /* Initially hide the result container */
+    margin-top: 10px; /* Add small margin to create minimal space between result and button */
+    padding: 21.6px; /* Reduce padding */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10.8px; /* Reduce border radius */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Greatly increase shadow */
+    text-align: center;
+    font-size: 17.28px; /* Reduce font size */
+    color: #333;
+}
+
+#result strong {
+    color: #ff5a5f;
+}
+
+
+/* Summary of inputs */
+#summary {
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Greatly increase shadow */
+}
+
+#summary h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#summary ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+}
+
+#summary ul li strong {
+    color: #000;
+}
+
+/* Progress bar */
+.progress-bar {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 5px 0px rgba(0, 0, 0, 0.3); /* Greatly increase shadow */
+}
+
+.progress {
+    height: 20px;
+    background: linear-gradient(45deg, #e68231, #e4131a);
+    border-radius: 10px;
+    width: 0%; /* Set the initial width of the progress bar */
+    transition: width 0.5s ease;
+}
+
+/* Hide the input summary by default */
+#summary {
+    display: none;
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: opacity 0.5s ease; /* Add transition effect for opacity */
+}
+.feedback-message {
+    position: relative; /* Position the message */
+    top: 145.5%;
+    left: 22%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 999; /* Ensure the message appears on top of other content */
+    padding: 10px; /* Adjust padding as needed */
+    font-size: 16px; /* Font size */
+    color: #ee610f; /* Text color: blue */
+    font-weight: bold; /* Make the text bold */
+    animation: hoverLetters 0.8s infinite alternate; /* Apply animation */
+}
+.getfit-image {
+    position: relative;
+    top: -300px; /* Adjust as needed */
+    left: 1300px;
+    transform: translateY(-50%);
+    z-index: -9; /* Ensure it's above other elements */
+    width: 500px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    margin-right: 0;
+    margin-top: -16%;
+}
+
+.getfit:hover {
+    transform: translateY(-50%) scale(1.1); /* Scale up on hover */
+}
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-column, .right-column {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .background-image {
+        width: 100%;
+        height: 50%;
+        background-position: center;
+    }
+
+    .getfit-image {
+        width: 100%;
+        margin-top: 0;
+        left: 0;
+        top: auto;
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px; /* Adjust font size */
+    }
+
+    form {
+        padding: 20px; /* Adjust padding */
+    }
+
+    button {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .nav-panel {
+        width: 100%; /* Make navigation panel full width */
+        height: auto;
+    }
+
+    .menu-icon {
+        top: 10px; /* Adjust position */
+        left: 10px;
+    }
+
+    .container {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .left-column, .right-column {
+        margin-bottom: 10px;
+    }
+
+    #result {
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Adjust font size */
+    }
+
+    form {
+        padding: 15px; /* Adjust padding */
+    }
+
+    button {
+        padding: 12px; /* Adjust padding */
+    }
+
+    .nav-panel {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .menu-icon {
+        top: 5px; /* Adjust position */
+        left: 5px;
+    }
+
+    .container {
+        padding: 5px; /* Adjust padding */
+    }
+
+    .left-column, .right-column {
+        margin-bottom: 5px;
+    }
+
+    #result {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+
+
+/* Define the animation for hovering up and down letters */
+@keyframes hoverLetters {
+    from {
+        transform: translateY(0); /* Initial position */
+    }
+    to {
+        transform: translateY(-5px); /* Hovering up */
+    }
+}
+
+/* Fun fact popup styles */
+.fun-fact-popup {
+    position: fixed;
+    top: 20%;
+    right: -500px; /* Initially hidden */
+    width: 300px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.fun-fact-popup .fun-fact-content {
+    position: relative;
+    text-align: center;
+}
+
+.fun-fact-popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fun-fact-popup p {
+    font-size: 16px;
+}
+
+.fun-fact-popup button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+}
+
+.fun-fact-popup button:hover {
+    background-color: #a3383c;
+}
+
+.close-button {
+    position: absolute;
+    top: -40px;
+    right: -13px;
+    background-color: transparent;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 40px; /* Add explicit width */
+    height: 30px; /* Add explicit height */
+    box-sizing: border-box; /* Include padding and border in width and height */
+    display: inline-block; /* Ensure it behaves like a button */
+}
+
+.close-button:hover {
+    background-color: #a3383c;
+}
+#more-fun-facts {
+    text-transform: none; /* Ensure text is not transformed to all caps */
+    width: auto; /* Optional: Adjust the width as necessary */
+    padding: 5px 10px; /* Adjust padding as needed */
+    display: inline-block; /* Ensure button size adjusts with content */
+    font-size: 16px; /* Adjust font size */
+    background-color:  #ff5a5f; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none;
+
+}
+
+#more-fun-facts:hover {
+    background-color: #a13438; /* Optional: Darken background on hover */
+}
+
+form {
+    margin-bottom: 120px; /* Add margin to the bottom of the form */
+}
+footer {
+    padding-top: 120px; /* Add padding to the top of the footer */
+}
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.nav-link.current {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}

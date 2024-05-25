@@ -1,0 +1,445 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}/* Topic Buttons */
+.topics {
+    margin-bottom: 20px;
+}
+
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Hide the actual radio buttons */
+.topic-buttons input[type="radio"] {
+    display: none;
+}
+
+/* Style the custom radio buttons */
+.topic-buttons label {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff5a5f, #ff5a5f);
+    color: #fff;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Change background color and text color when label is hovered */
+.topic-buttons label:hover {
+    background: linear-gradient(135deg, #ff5a5f, #e64040);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the custom radio buttons when checked */
+.topic-buttons input[type="radio"]:checked + label {
+    background: linear-gradient(135deg, #ff5a5f, #b9191e);
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+
+.main-container {
+    padding-top: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 30px
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #ff5a5f, #d43238); /* Gradient background for a modern look */
+    color: white;
+    padding: 12px 24px; /* Increase padding for a more substantial button */
+    text-decoration: none;
+    border-radius: 25px; /* Increase border radius for a more pill-shaped button */
+    font-size: 16px;
+    font-weight: bold; /* Make text bolder */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: inline-block; /* Ensure block display */
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #e04e4e, #b91f1f); /* Darker gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+}
+
+.cta-button:active {
+    background: linear-gradient(135deg, #c04040, #961414); /* Slightly different gradient on active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on active */
+    transform: translateY(1px); /* Slightly press down the button on active */
+}
+
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 40px;
+}
+
+.features {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature-item {
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item:hover img {
+    transform: scale(1.1);
+}
+
+.testimonials {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonial-item {
+    max-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+}
+
+.fun-fact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.fun-fact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.fun-fact-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Fun fact popup styles */
+.fun-fact-popup {
+    position: fixed;
+    top: 20%;
+    right: -500px;
+    width: 300px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.fun-fact-popup .fun-fact-content {
+    position: relative;
+    text-align: center;
+}
+
+.fun-fact-popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fun-fact-popup p {
+    font-size: 16px;
+}
+
+.fun-fact-popup button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fun-fact-popup button:hover {
+    background-color: #a3383c;
+}
+
+.close-button {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    background-color: transparent;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-button:hover {
+    background-color: #a3383c;
+}
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.nav-link.current {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        margin-bottom: 30px;
+    }
+
+    .testimonial-list {
+        flex-direction: column;
+    }
+
+    .testimonial-item {
+        margin-bottom: 30px;
+    }
+}

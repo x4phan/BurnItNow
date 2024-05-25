@@ -1,0 +1,420 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.top-panel {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.site-title-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+.site-title {
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fire-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fire-logo:hover {
+    animation: spin 1s linear;
+}
+
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    color: #ff5a5f;
+    font-weight: bold;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+/* FAQ Section Styles */
+.faq-section {
+    margin-top: 50px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    overflow: hidden; /* Ensure the transition works smoothly */
+}
+
+.question {
+    font-size: 24px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.question:hover {
+    color: #ff5a5f;
+}
+
+.answer {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    display: none;
+    margin-left: 20px;
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition for height and opacity */
+    overflow: hidden; /* Ensure the transition works smoothly */
+}
+
+.show-answer {
+    display: block;
+    max-height: 1000px; /* Large enough to show content */
+    opacity: 1;
+}
+
+.question-icon {
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.rotate {
+    transform: rotate(90deg); /* Rotate the icon when the answer is shown */
+}
+
+/* Print Button Styles */
+#print-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff5a5f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 90px;
+    margin-left: 30px;
+}
+
+#print-button:hover {
+    background-color: #b9191e;
+}
+
+#print-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.5);
+}
+
+.fun-fact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.fun-fact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.fun-fact-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Fun fact popup styles */
+.fun-fact-popup {
+    position: fixed;
+    top: 20%;
+    right: -500px;
+    width: 300px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.fun-fact-popup .fun-fact-content {
+    position: relative;
+    text-align: center;
+}
+
+.fun-fact-popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fun-fact-popup p {
+    font-size: 16px;
+}
+
+.fun-fact-popup button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fun-fact-popup button:hover {
+    background-color: #a3383c;
+}
+
+.close-button {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    background-color: transparent;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-button:hover {
+    background-color: #a3383c;
+}
+#more-fun-facts {
+    text-transform: none; /* Ensure text is not transformed to all caps */
+    width: auto; /* Optional: Adjust the width as necessary */
+    padding: 5px 10px; /* Adjust padding as needed */
+    display: inline-block; /* Ensure button size adjusts with content */
+    font-size: 16px; /* Adjust font size */
+    background-color:  #ff5a5f; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none;
+
+}
+
+#more-fun-facts:hover {
+    background-color: #a13438; /* Optional: Darken background on hover */
+}
+
+h2 {
+  
+    text-align: left;
+    margin-left: 20px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.controls {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Increase padding for better appearance */
+    margin: 5px;
+    border-radius: 20px; /* Use a larger border radius for rounded edges */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b9191e;
+}
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+.nav-link.current {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between links */
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #ff5a5f; /* Change color on hover */
+}
