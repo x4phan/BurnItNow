@@ -15,7 +15,7 @@ Usage:
 Installation:
 
 Clone the repository to your local machine:
-git clone https://github.com/your_username/BurnItNow.git
+git clone https://github.com/x4phan/BurnItNow.git
 
 Install dependencies:
 pip install -r requirements.txt
