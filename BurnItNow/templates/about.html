@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BurnItNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about-styles.css') }}">
+</head>
+<body>
+    <header class="top-panel">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="static/images/fire.png" alt="Fire Logo" class="fire-logo">
+                <a href="{{ url_for('home') }}" class="site-title-link">
+                    <h1 class="site-title">BurnItNow</h1>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}"class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('index') }}"class="nav-link">Predict Now!</a></li>
+                    <li><a href="{{ url_for('about') }}"class="nav-link current">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}"class="nav-link">Contact Us</a></li>
+                    <li><a href="{{ url_for('nutrition') }}"class="nav-link">Nutrition</a></li>
+                    <li>
+                        <a href="{{ url_for('faq') }}" class="faq-link">
+                            <span class="question-mark" title="FAQ">?</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav> 
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="container">
+            <h1>About Us</h1>
+           
+
+            <div class="about-content">
+                <h2>Our Journey Begins</h2>
+                <p>It all started with a group of six college students, each with a passion for technology and a desire to make a positive impact. Among them was Dave Dominic Goze, our lead developer, whose love for coding drove the project forward.</p>
+                <div id="hidden-content" style="display: none;">
+                    <h2>A Common Goal</h2>
+                    <p>As part of our final project for our Intelligent Systems course, we set out to tackle a common problem: accurately tracking calorie expenditure during physical activities. It was a challenge we had all faced, and we were determined to find a solution.</p>
+                    <h2>The Birth of an Idea</h2>
+                    <p>Driven by our shared goal of helping others lead healthier lives, we came up with the concept for Calories Burnt Predictor. We wanted to create an app that could predict calorie burn with precision, making it easier for people to reach their fitness goals.</p>
+                    <h2>Dedication and Hard Work</h2>
+                    <p>With our vision in mind, we dove headfirst into the project. Late nights and early mornings became the norm as we coded, tested, and refined the app. Despite the challenges we faced along the way, our dedication never wavered.</p>
+                    <h2>A Dream Realized</h2>
+                    <p>After weeks of hard work, the app was finally ready. With its intuitive interface and accurate predictions, it exceeded our expectations. We couldn't wait to share it with the world and make a difference in people's lives.</p>
+                    <h2>Our Commitment to You</h2>
+                    <p>At BurnItNow, we're more than just a group of developers – we're a team on a mission. Our goal is to empower you to lead a healthier, happier life by providing you with the tools you need to succeed.</p>
+                </div>
+                <button id="read-more-btn">Read More</button>
+            </div>
+
+            <div class="project-info">
+                <h2>About BurnItNow</h2>
+                <p class="project-description">Harnessing data from over 15,000 meticulously curated samples, our advanced machine learning model precisely forecasts the number of calories you burn during your workouts. Whether you're a seasoned athlete or just starting your fitness journey, our platform is designed to empower you every step of the way.</p>
+                <p class="project-description">At the heart of our app lies a commitment to accuracy and customization. By considering key factors such as age, gender, height, weight, exercise duration, heart rate, and body temperature, our algorithm tailors its predictions to your unique physiology and activity level. This level of personalized precision ensures that you receive actionable insights that are relevant to your specific fitness goals.</p>
+                <p class="project-description">But our app is more than just a calorie counter. It's a comprehensive fitness companion, dedicated to providing you with the tools and knowledge you need to optimize your workouts and achieve your desired results. Whether you're looking to shed pounds, build muscle, or improve your overall health, our platform offers a wealth of resources.</p>
+            </div>
+
+            <h2>Our Team</h2>
+            <div class="scrollable-buttons"> 
+        
+                <div class="member-container">
+                    
+                    <!-- Member 1 -->
+                    <section id="member1" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/dave.jpg" alt="Dave Dominic Goze" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>Dave Dominic Goze</h3>
+                                <p>"As the lead developer and designer of the Calories Burnt Predictor application, I poured my heart and soul into crafting a user-friendly interface and robust backend system. My goal was to create an app that not only accurately predicts calorie expenditure but also delights users with its intuitive design. With every line of code and every pixel placed, I aimed to empower users to take control of their fitness journey with confidence."</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="member-container">
+                    <!-- Member 2 -->
+                    <section id="member2" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/larra.jpg" alt="Larra Jane Perminola" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>Larra Jane Perminola</h3>
+                                <p>"As a designer for the Calories Burnt Predictor project, my focus was on creating visually captivating elements that enhance the user experience. From designing eye-catching graphics to crafting intuitive layouts, I strove to make every interaction with our app a delight. By infusing creativity into every aspect of our design, I aimed to make the Calories Burnt Predictor app both functional and beautiful."</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="member-container">
+                    <!-- Member 3 -->
+                    <section id="member3" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/hope.jpg" alt="Mariel Hope Balazuela" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>Mariel Hope Balazuela</h3>
+                                <p>"As a documenter for the Calories Burnt Predictor project, I played a crucial role in capturing the essence of our journey. Through detailed notes and thorough documentation, I chronicled the evolution of our application from concept to completion. By documenting our experiences, I helped preserve the invaluable lessons learned along the way."</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="member-container">
+                    <!-- Member 4 -->
+                    <section id="member4" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/rose.jpg" alt="Rose Anne Evora" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>Rose Anne Evora</h3>
+                                <p>"As a documenter for the Calories Burnt Predictor project, I diligently recorded the progress and milestones achieved by our team. By maintaining detailed logs and reports, I provided valuable insights into our project's development lifecycle. Through my documentation efforts, I contributed to the clarity and transparency of our project."</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="member-container">
+                    <!-- Member 5 -->
+                    <section id="member5" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/brent.jpg" alt="Brent Joshua Bonilla" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>Brent Joshua Bonilla</h3>
+                                <p>"As a documenter for the Calories Burnt Predictor project, my role was to meticulously record every detail of our development process. From brainstorming sessions to testing phases, I ensured that no aspect of our project went undocumented. By maintaining comprehensive documentation, I helped our team stay organized and focused on our goals."</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="member-container">
+                    <!-- Member 6 -->
+                    <section id="member6" class="member-section">
+                        <button class="prev"><</button>
+                        <button class="next">></button>
+                        <div class="member">
+                            <div class="member-image">
+                                <img src="static/images/jape.jpg" alt="John Paul Devanadera" class="member-image">
+                            </div>
+                            <div class="member-info">
+                                <h3>John Paul Devanadera</h3>
+                                <p>"As a documenter for the Calories Burnt Predictor project, I focused on capturing the essence of our team's collaborative efforts. From recording meeting minutes to documenting feedback sessions, I ensured that every voice was heard and every decision was documented. By embracing the role of a documenter, I helped foster a culture of transparency and accountability within our team."</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+              
+            </div>
+    
+            <div class="fun-fact-popup" id="fun-fact-popup">
+                <div class="fun-fact-content">
+                    <button id="hide-fun-fact" class="close-button">X</button>
+                    <h2>Did You Know?</h2>
+                    <p id="fun-fact-text">Your fun fact will go here.</p>
+                    <a href="{{ url_for('home') }}#fun-facts-section" id="more-fun-facts">More Fun Facts</a>
+                </div>
+            </div>
+            
+           
+    </main>
+    <div class="image-container">
+        <img src="static/images/dave.jpg" alt="Dave Dominic Goze" class="member-images">
+        <img src="static/images/larra.jpg" alt="Larra Jane Perminola" class="member-images">
+        <img src="static/images/hope.jpg" alt="Mariel Hope Balazuela" class="member-images">
+        <img src="static/images/rose.jpg" alt="Rose Anne Evora" class="member-images">
+        <img src="static/images/brent.jpg" alt="Brent Joshua Bonilla" class="member-images">
+        <img src="static/images/jape.jpg" alt="John Paul Devanadera" class="member-images">
+    </div>
+   
+    
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 BurnItNow. All rights reserved. 
+            <span class="footer-nav">
+                <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a> | 
+                <a href="{{ url_for('tos') }}">Terms of Service</a>
+            </span>
+        </p>
+    </footer>
+    
+    <script src="{{ url_for('static',filename='about-script.js') }}"></script>
+
+</body>
+</html>

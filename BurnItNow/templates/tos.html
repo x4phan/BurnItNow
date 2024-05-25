@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - BurnItNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tos-styles.css') }}">
+</head>
+
+<body>
+    <header class="top-panel">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="static/images/fire.png" alt="Fire Logo" class="fire-logo">
+                <a href="{{ url_for('home') }}" class="site-title-link">
+                    <h1 class="site-title">BurnItNow</h1>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}"class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('index') }}"class="nav-link">Predict Now!</a></li>
+                    <li><a href="{{ url_for('about') }}"class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}"class="nav-link">Contact Us</a></li>
+                    <li><a href="{{ url_for('nutrition') }}"class="nav-link">Nutrition</a></li>
+                    <li>
+                        <a href="{{ url_for('faq') }}" class="faq-link">
+                            <span class="question-mark" title="FAQ">?</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="controls">
+            <button id="toggle-all">Expand All</button>
+        </div>
+        <section>
+            <h2>Terms of Service</h2>
+            <p>Welcome to BurnItNow, a calories burnt predictor website. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions of use. Please review these terms carefully. If you do not agree with these terms, you should not use this website.</p>
+        </section>
+        <section>
+            <h3> Acceptance of Terms</h3>
+            <p>By using BurnItNow, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+        </section>
+        <section>
+            <h3> Changes to Terms</h3>
+            <p>BurnItNow reserves the right to modify these Terms of Service at any time. Any changes will be posted on this page, and your continued use of the site signifies your acceptance of the updated terms.</p>
+        </section>
+        <section>
+            <h3> Use of the Site</h3>
+            <p>You agree to use BurnItNow only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use of the site. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our site.</p>
+        </section>
+        
+        </section>
+        <section>
+            <h3> Privacy Policy</h3>
+            <p>Your use of BurnItNow is also governed by our Privacy Policy. Please review our Privacy Policy to understand our practices.</p>
+        </section>
+        <section>
+            <h3> Intellectual Property</h3>
+            <p>All content on BurnItNow, including text, graphics, logos, icons, images, and software, is the property of BurnItNow or its content suppliers and is protected by international copyright laws. Unauthorized use of this content is prohibited.</p>
+        </section>
+        <section>
+            <h3> Disclaimer of Warranties</h3>
+            <p>BurnItNow is provided on an "as is" and "as available" basis. We make no representations or warranties of any kind, express or implied, as to the operation of our site or the information, content, materials, or products included on our site.</p>
+        </section>
+        <section>
+            <h3> Limitation of Liability</h3>
+            <p>In no event shall BurnItNow be liable for any damages arising out of or in connection with your use of our site. This limitation of liability applies to all damages of any kind, including but not limited to direct, indirect, incidental, punitive, and consequential damages.</p>
+        </section>
+        <section>
+            <h3> Governing Law</h3>
+            <p>These Terms of Service are governed by and construed in accordance with the laws of the jurisdiction in which BurnItNow operates, without regard to its conflict of law principles.</p>
+        </section>
+        <section>
+            <h3> Contact Information</h3>
+            <p>If you have any questions about these Terms of Service, please contact us at [davedominic911@gmail.com].</p>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <p>&copy; 2024 BurnItNow. All rights reserved. 
+            <span class="footer-nav">
+                <a href="{{ url_for('privacypolicy') }}"class="nav-link">Privacy Policy</a>|
+                <a href="{{ url_for('tos') }}"class="nav-link current">Terms of Service</a>
+            </span>
+        </p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='tos-script.js') }}"></script>
+</body>
+
+</html>

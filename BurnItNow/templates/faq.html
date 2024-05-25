@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - BurnItNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='faq-styles.css') }}">
+</head>
+
+<body>
+    <header class="top-panel">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="static/images/fire.png" alt="Fire Logo" class="fire-logo">
+                <a href="{{ url_for('home') }}" class="site-title-link">
+                    <h1 class="site-title">BurnItNow</h1>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}"class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('index') }}"class="nav-link">Predict Now!</a></li>
+                    <li><a href="{{ url_for('about') }}"class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}"class="nav-link">Contact Us</a></li>
+                    <li><a href="{{ url_for('nutrition') }}"class="nav-link">Nutrition</a></li>
+                    <li>
+                        <a href="{{ url_for('faq') }}" class="nav-link current">
+                            <span class="question-mark" title="FAQ">?</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    <div class="faq-section">
+        <div class="controls">
+            <button id="toggle-all">Expand All</button>
+            <button id="print-button">Print FAQ</button>
+        </div>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3 class="question">How does the calories burnt predictor work?</h3>
+                <p class="answer">The calories burnt predictor uses machine learning algorithms to analyze various factors such as gender, age, height, weight, duration of exercise, heart rate, and body temperature to estimate the number of calories burnt during physical activity.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Is the predictor accurate?</h3>
+                <p class="answer">While the predictor strives to provide accurate estimates, please note that individual results may vary. Factors such as metabolism, fitness level, and intensity of exercise can influence the accuracy of the prediction.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="question">Can the predictor be used for all types of physical activities?</h3>
+                <p class="answer">Yes, the predictor can be used for a wide range of physical activities, including walking, running, cycling, swimming, and more.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Is there a mobile app available for the predictor?</h3>
+                <p class="answer">Currently, there is no mobile app available for the predictor, but you can access it through any web browser on your mobile device.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Are there any age restrictions for using the predictor?</h3>
+                <p class="answer">No, there are no age restrictions. The predictor can be used by individuals of all ages who engage in physical activity.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Can I use the predictor if I have a medical condition?</h3>
+                <p class="answer">If you have any medical conditions or concerns, it's recommended to consult with a healthcare professional before using the predictor.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Is the predictor free to use?</h3>
+                <p class="answer">Yes, the predictor is completely free to use. Simply enter your information and get an estimate of the calories burnt during your physical activity.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Can I track my progress over time with the predictor?</h3>
+                <p class="answer">At the moment, the predictor does not offer a built-in progress tracking feature. However, you can manually track your progress by recording your results over time.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">How often should I use the predictor?</h3>
+                <p class="answer">You can use the predictor as often as you'd like, depending on your activity level and fitness goals. Some users prefer to use it daily, while others use it periodically to monitor their progress.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Can I share my results from the predictor with others?</h3>
+                <p class="answer">Yes, you can share your results with others if you choose to do so. Simply copy the provided information and share it via email, social media, or any other communication platform.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Does the predictor take into account dietary factors?</h3>
+                <p class="answer">No, the predictor focuses solely on estimating the calories burnt during physical activity. It does not consider dietary factors such as calorie intake or nutritional content.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Does the predictor account for differences in terrain or environmental conditions?</h3>
+                <p class="answer">While the predictor primarily focuses on individual factors such as age, gender, and activity duration, it may not explicitly account for variations in terrain or environmental conditions. However, it provides general estimates based on typical conditions for the selected activity.</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="fun-fact-popup" id="fun-fact-popup">
+                <div class="fun-fact-content">
+                    <button id="hide-fun-fact" class="close-button">X</button>
+                    <h2>Did You Know?</h2>
+                    <p id="fun-fact-text">Your fun fact will go here.</p>
+                    <a href="{{ url_for('home') }}#fun-facts-section" id="more-fun-facts">More Fun Facts</a>
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 BurnItNow. All rights reserved. 
+            <span class="footer-nav">
+                <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a> | 
+                <a href="{{ url_for('tos') }}">Terms of Service</a>
+            </span>
+        </p>
+    </footer>
+    
+    
+    <script src="{{ url_for('static', filename='faq-script.js') }}"></script>
+</body>
+
+</html>

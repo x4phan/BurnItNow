@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition - BurnItNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nutrition-styles.css') }}">
+</head>
+
+<body>
+    <header class="top-panel">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="static/images/fire.png" alt="Fire Logo" class="fire-logo">
+                <a href="{{ url_for('home') }}" class="site-title-link">
+                    <h1 class="site-title">BurnItNow</h1>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}"class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('index') }}"class="nav-link">Predict Now!</a></li>
+                    <li><a href="{{ url_for('about') }}"class="nav-link">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}"class="nav-link">Contact Us</a></li>
+                    <li><a href="{{ url_for('nutrition') }}"class="nav-link current">Nutrition</a></li>
+                    <li>
+                        <a href="{{ url_for('faq') }}" class="faq-link">
+                            <span class="question-mark" title="FAQ">?</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for a food...">
+            <button onclick="searchFood()">Search</button>
+            <!-- Predictive text suggestions will appear here -->
+            <div id="suggestions"></div>
+        </div>
+
+
+        <h2 class="food-items-heading">Food Items</h2>
+
+        <div class="food-list">
+            <!-- Food items will be added here dynamically -->
+
+            <!-- Food Item 1 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/apple-fruit.png" alt="apple-fruit.png">
+                </div>
+                <h3>Apple</h3>
+                <p>Apples are a good source of fiber and vitamin C. They are low in calories and have numerous health
+                    benefits.</p>
+            </div>
+
+            <!-- Food Item 2 -->
+            <div class="food-item">
+
+                <div class="food-image-container">
+
+                    <!-- Placeholder Image -->
+                    <img src="static/images/salmon-fish.png" alt="salmon-fish.png">
+                </div>
+                <h3>Salmon</h3>
+                <p>Salmon is rich in omega-3 fatty acids, high-quality protein, and various vitamins and minerals. It is
+                    considered one of the healthiest foods.</p>
+            </div>
+
+            <!-- Food Item 3 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/spinach-veg.png" alt="spinach-veg.png">
+                </div>
+                <h3>Spinach</h3>
+                <p>Spinach is packed with vitamins, minerals, and antioxidants. It is low in calories and has many
+                    health benefits, including improved eyesight and bone health.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 4 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/banana-fruit.png" alt="banana-fruit.png">
+                </div>
+                <h3>Banana</h3>
+                <p>Bananas are a good source of potassium and vitamins B6 and C. They are also low in calories and high
+                    in fiber.</p>
+            </div>
+
+            <!-- Food Item 5 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/broccoli-veg.png" alt="broccoli-veg.png">
+                </div>
+                <h3>Broccoli</h3>
+                <p>Broccoli is rich in fiber, vitamins, and minerals. It is known for its cancer-fighting properties and
+                    is a great addition to any diet.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 6 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/chickenbreast-meat.png" alt="chickenbreat-meat.png">
+                </div>
+                <h3>Chicken Breast</h3>
+                <p>Chicken breast is a lean source of protein. It is low in fat and calories, making it a popular choice
+                    for those looking to build muscle or lose weight.</p>
+            </div>
+
+            <!-- Food Item 7 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/quinoa-grain.png" alt="quinoa-grain.png">
+                </div>
+                <h3>Quinoa</h3>
+                <p>Quinoa is a gluten-free grain that is high in protein and fiber. It is also rich in vitamins and
+                    minerals, making it a nutritious addition to any meal.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 8 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/avocado-fruit.png" alt="avocado-fruit.png">
+                </div>
+                <h3>Avocado</h3>
+                <p>Avocado is a good source of healthy fats, vitamins, and minerals. It is known for its creamy texture
+                    and is often used in salads, sandwiches, and dips.</p>
+            </div>
+
+            <!-- Food Item 9 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/yogurt-dairy.png" alt="yogurt-dairy.png">
+                </div>
+                <h3>Yogurt</h3>
+                <p>Yogurt is rich in probiotics, protein, and calcium. It is a versatile food that can be enjoyed on its
+                    own or used as a base for smoothies and sauces.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 10 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/almonds-nut.png" alt="almonds-nut.png">
+                </div>
+                <h3>Almonds</h3>
+                <p>Almonds are a good source of healthy fats, protein, and fiber. They are also rich in vitamins and
+                    minerals, including vitamin E and magnesium.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 11 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/eggs-dairy.png" alt="eggs-dairy.png">
+                </div>
+                <h3>Eggs</h3>
+                <p>Eggs are a great source of high-quality protein, vitamins, and minerals. They are also versatile and
+                    can be prepared in many different ways.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 12 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/oatmeal-grain.png" alt="oatmeal-grain.png">
+                </div>
+                <h3>Oatmeal</h3>
+                <p>Oatmeal is a nutritious breakfast option that is high in fiber and complex carbohydrates. It can help
+                    lower cholesterol levels and improve heart health.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 13 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cottagecheese-dairy.png" alt="cottagecheese-dairy.png">
+                </div>
+                <h3>Cottage Cheese</h3>
+                <p>Cottage cheese is a low-fat dairy product that is high in protein and calcium. It is often enjoyed on
+                    its own or mixed with fruit or vegetables.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 14 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/kale-veg.png" alt="kale-veg.png">
+                </div>
+                <h3>Kale</h3>
+                <p>Kale is a leafy green vegetable that is high in vitamins, minerals, and antioxidants. It is often
+                    used in salads, smoothies, and stir-fries.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 15 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/blueberries-fruit.png" alt="blueberries-fruit.png">
+                </div>
+                <h3>Blueberries</h3>
+                <p>Blueberries are a rich source of antioxidants, vitamins, and minerals. They are low in calories and
+                    can help improve memory and brain function.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 16 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/sweetpotato-veg.png" alt="sweetpotato-veg.png">
+                </div>
+                <h3>Sweet Potatoes</h3>
+                <p>Sweet potatoes are a nutritious root vegetable that is high in fiber, vitamins, and minerals. They
+                    are also rich in antioxidants and can help regulate blood sugar levels.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 17 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/tuna-fish.png" alt="tuna-fish.png">
+                </div>
+                <h3>Tuna</h3>
+                <p>Tuna is a lean source of protein that is rich in omega-3 fatty acids. It is often enjoyed fresh or
+                    canned and can be used in salads, sandwiches, and sushi.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 18 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/oranges-fruit.png" alt="oranges-fruit.png">
+                </div>
+                <h3>Oranges</h3>
+                <p>Oranges are a good source of vitamin C and antioxidants. They are low in calories and high in fiber,
+                    making them a nutritious and refreshing snack.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 19 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/greentea-drink.png" alt="greentea-drink.png">
+                </div>
+                <h3>Green Tea</h3>
+                <p>Green tea is rich in antioxidants and has numerous health benefits. It is often consumed for its
+                    potential to improve brain function, aid in weight loss, and reduce the risk of certain diseases.
+                </p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 20 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cauliflower-veg.png" alt="cauliflower-veg.png">
+                </div>
+                <h3>Cauliflower</h3>
+                <p>Cauliflower is a cruciferous vegetable that is high in fiber, vitamins, and minerals. It is low in
+                    calories and can be used as a substitute for grains and legumes in many recipes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 21 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/carrots-veg.png" alt="carrots-veg.png">
+                </div>
+                <h3>Carrots</h3>
+                <p>Carrots are a good source of beta-carotene, fiber, vitamins, and minerals. They are low in calories
+                    and can be enjoyed raw or cooked in various dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 22 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/brownrice-grain.png" alt="brownrice-grain.png">
+                </div>
+                <h3>Brown Rice</h3>
+                <p>Brown rice is a whole grain that is high in fiber, vitamins, and minerals. It is a healthy
+                    alternative to white rice and can be used in a variety of dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 23 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/tomato-fruit.png" alt="tomato-fruit.png">
+                </div>
+                <h3>Tomatoes</h3>
+                <p>Tomatoes are a good source of vitamins, minerals, and antioxidants. They are low in calories and can
+                    be used in salads, sauces, and soups.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 24 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/blackbeans-beans.png" alt="blackbeans-beans.png">
+                </div>
+                <h3>Black Beans</h3>
+                <p>Black beans are a good source of protein, fiber, vitamins, and minerals. They are low in fat and can
+                    be used in a variety of recipes, including soups, salads, and tacos.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 25 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/walnuts-nuts.png" alt="walnuts-nuts.png">
+                </div>
+                <h3>Walnuts</h3>
+                <p>Walnuts are a good source of healthy fats, protein, vitamins, and minerals. They are also rich in
+                    antioxidants and can help reduce the risk of certain diseases.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 26 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/chickpeas-veg.png" alt="chickpeas-veg.png">
+                </div>
+                <h3>Chickpeas</h3>
+                <p>Chickpeas, also known as garbanzo beans, are a good source of protein, fiber, vitamins, and minerals.
+                    They are versatile and can be used in salads, soups, and stews.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 27 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/strawberries-fruit.png" alt="strawberries-fruit.png">
+                </div>
+                <h3>Strawberries</h3>
+                <p>Strawberries are a good source of vitamin C, fiber, and antioxidants. They are low in calories and
+                    can be enjoyed fresh or added to various dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 28 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/beef-meat.png" alt="beef-meat.png">
+                </div>
+                <h3>Beef</h3>
+                <p>Beef is a rich source of protein, vitamins, and minerals, including iron and zinc. It is a staple
+                    food in many diets and can be prepared in various ways.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 29 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/peanutbutter-dairy.png" alt="peanutbutter-dairy.png">
+                </div>
+                <h3>Peanut Butter</h3>
+                <p>Peanut butter is a good source of healthy fats, protein, vitamins, and minerals. It is often enjoyed
+                    on toast, sandwiches, or as a dip for fruits and vegetables.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 30 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/shrimp-meat.png" alt="shrimp-meat.png">
+                </div>
+                <h3>Shrimp</h3>
+                <p>Shrimp is a low-calorie seafood that is high in protein and omega-3 fatty acids. It is often enjoyed
+                    grilled, boiled, or sautéed and can be used in a variety of dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 31 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/peas-veg.png" alt="peas-veg.png">
+                </div>
+                <h3>Peas</h3>
+                <p>Peas are a good source of protein, fiber, vitamins, and minerals. They are low in calories and can be
+                    used in soups, salads, and side dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 32 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/milk-dairy.png" alt="milk-dairy.png">
+                </div>
+                <h3>Milk</h3>
+                <p>Milk is a rich source of calcium, protein, vitamins, and minerals. It is commonly consumed as a
+                    beverage or used in cooking and baking.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 33 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cucumber-veg.png" alt="cucumber-veg.png">
+                </div>
+                <h3>Cucumbers</h3>
+                <p>Cucumbers are low in calories and high in water content. They are often enjoyed fresh in salads or
+                    used as a crunchy snack.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 34 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cherries-fruit.png" alt="cherries-fruit.png">
+                </div>
+                <h3>Cherries</h3>
+                <p>Cherries are a good source of antioxidants and vitamins. They are low in calories and can be enjoyed
+                    fresh or used in desserts and baked goods.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 35 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/artichoke-veg.png" alt="artichoke-veg.png">
+                </div>
+                <h3>Artichokes</h3>
+                <p>Artichokes are a good source of fiber, vitamins, and minerals. They are low in calories and can be
+                    enjoyed steamed, grilled, or roasted.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 36 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/blackberries-fruit.png" alt="blackberries-fruit.png">
+                </div>
+                <h3>Blackberries</h3>
+                <p>Blackberries are high in antioxidants, vitamins, and minerals. They are low in calories and can be
+                    enjoyed fresh, frozen, or added to various dishes.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 37 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/lentils-grain.png" alt="lentils-grain.png">
+                </div>
+                <h3>Lentils</h3>
+                <p>Lentils are a good source of protein, fiber, vitamins, and minerals. They are low in calories and can
+                    be used in soups, stews, and salads.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 38 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/greekyogurt-dairy.png" alt="greekyogurt-dairy.png">
+                </div>
+                <h3>Greek Yogurt</h3>
+                <p>Greek yogurt is high in protein and probiotics. It is often enjoyed on its own or used as a base for
+                    smoothies, dips, and sauces.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 39 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/peppers-veg.png" alt="peppers-veg.png">
+                </div>
+                <h3>Peppers</h3>
+                <p>Peppers are a good source of vitamins, minerals, and antioxidants. They are low in calories and can
+                    be enjoyed raw, roasted, or grilled.</p>
+            </div>
+
+            <!-- Continue adding more food items as needed -->
+            <!-- Food Item 40 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/mango-fruit.png" alt="mango-fruit.png">
+                </div>
+                <h3>Mango</h3>
+                <p>Mangoes are a tropical fruit that is high in vitamins, minerals, and antioxidants. They are low in
+                    calories and can be enjoyed fresh or added to smoothies, salads, and desserts.</p>
+            </div>
+            <!-- Food Item 41 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/pineapple-fruit.png" alt="pineapple-fruit.png">
+                </div>
+                <h3>Pineapple</h3>
+                <p>Pineapples are tropical fruits known for their sweet and tangy taste. They are rich in vitamins,
+                    minerals, and antioxidants.</p>
+            </div>
+            <!-- Food Item 42 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/pears-fruit.png" alt="pears-fruit.png">
+                </div>
+                <h3>Pears</h3>
+                <p>Pears are sweet and juicy fruits that are high in fiber, vitamins, and minerals. They come in various
+                    shapes and colors.</p>
+            </div>
+            <!-- Food Item 43 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/grapes-fruit.png" alt="grapes-fruit.png">
+                </div>
+                <h3>Grapes</h3>
+                <p>Grapes are small, sweet fruits that grow in clusters. They are rich in antioxidants and can be
+                    enjoyed fresh or dried.</p>
+            </div>
+            <!-- Food Item 44 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/bellpeppers-veg.png" alt="bellpeppers-veg.png">
+                </div>
+                <h3>Bell Peppers</h3>
+                <p>Bell peppers come in various colors such as red, yellow, and green. They are rich in vitamin C and
+                    antioxidants.</p>
+            </div>
+            <!-- Food Item 45 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/asparagus-veg.png" alt="asparagus-veg.png">
+                </div>
+                <h3>Asparagus</h3>
+                <p>Asparagus is a spring vegetable that is rich in fiber, vitamins, and minerals. It is often enjoyed
+                    steamed, grilled, or roasted.</p>
+            </div>
+            <!-- Food Item 46 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/pomegranate-fruit.png" alt="pomegranate-fruit.png">
+                </div>
+                <h3>Pomegranate</h3>
+                <p>Pomegranates are fruits with juicy seeds packed with antioxidants. They are known for their sweet and
+                    tangy flavor.</p>
+            </div>
+            <!-- Food Item 47 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/celery-veg.png" alt="celery-veg.png">
+                </div>
+                <h3>Celery</h3>
+                <p>Celery is a crunchy vegetable that is low in calories and high in fiber. It is often used as a snack
+                    or added to salads and soups.</p>
+            </div>
+            <!-- Food Item 48 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/mushroom-veg.png" alt="mushroom-veg.png">
+                </div>
+                <h3>Mushrooms</h3>
+                <p>Mushrooms are fungi that come in various shapes and sizes. They are low in calories and rich in
+                    vitamins and minerals.</p>
+            </div>
+            <!-- Food Item 49 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/zucchini-veg.png" alt="zucchini-veg.png">
+                </div>
+                <h3>Zucchini</h3>
+                <p>Zucchini is a summer squash that is low in calories and high in water content. It can be grilled,
+                    sautéed, or used in baked dishes.</p>
+            </div>
+            <!-- Food Item 51 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cantaloupe-veg.png" alt="cantaloupe-veg.png">
+                </div>
+                <h3>Cantaloupe</h3>
+                <p>Cantaloupe is a type of melon that is sweet and juicy. It is rich in vitamins A and C and is often
+                    enjoyed fresh.</p>
+            </div>
+            <!-- Food Item 52 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/cabbage-veg.png" alt="cabbage-veg.png">
+                </div>
+                <h3>Cabbage</h3>
+                <p>Cabbage is a leafy green or purple vegetable that is low in calories and high in fiber. It can be
+                    eaten raw or cooked.</p>
+            </div>
+            <!-- Food Item 53 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/kiwi-fruit.png" alt="kiwi-fruit.png">
+                </div>
+                <h3>Kiwi</h3>
+                <p>Kiwi is a small fruit with green flesh and black seeds. It is rich in vitamin C, vitamin K, and
+                    fiber.</p>
+            </div>
+            <!-- Food Item 54 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/apricot-fruit.png" alt="apricot-fruit.png">
+                </div>
+                <h3>Apricots</h3>
+                <p>Apricots are small, orange fruits that are rich in vitamins A and C. They are often dried and enjoyed
+                    as a snack.</p>
+            </div>
+            <!-- Food Item 55 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/peach-fruit.png" alt="peach-fruit.png">
+                </div>
+                <h3>Peaches</h3>
+                <p>Peaches are fuzzy fruits with juicy flesh. They are high in vitamins A and C and can be eaten fresh
+                    or used in cooking.</p>
+            </div>
+            <!-- Food Item 56 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/plums-fruit.png" alt="plums-fruit.png">
+                </div>
+                <h3>Plums</h3>
+                <p>Plums are small, round fruits with smooth skin. They are rich in vitamins and antioxidants and are
+                    often eaten fresh or dried.</p>
+            </div>
+            <!-- Food Item 57 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/raspberries-fruit.png" alt="raspberries-fruit.png">
+                </div>
+                <h3>Raspberries</h3>
+                <p>Raspberries are small, red fruits that are rich in fiber and antioxidants. They have a sweet and
+                    slightly tart flavor.</p>
+            </div>
+            <!-- Food Item 58 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/watermelon-fruit.png" alt="watermelon-fruit.png">
+                </div>
+                <h3>Watermelon</h3>
+                <p>Watermelon is a juicy fruit with red flesh and black seeds. It is high in water content and vitamins
+                    A and C.</p>
+            </div>
+            <!-- Food Item 59 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/grapefruit-fruit.png" alt="grapefruit-fruit.png">
+                </div>
+                <h3>Grapefruit</h3>
+                <p>Grapefruit is a citrus fruit known for its sour and tangy taste. It is rich in vitamin C and
+                    antioxidants.</p>
+            </div>
+            <!-- Food Item 60 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/dates-fruit.png" alt="dates-fruit.png">
+                </div>
+                <h3>Dates</h3>
+                <p>Dates are sweet fruits that grow on date palm trees. They are high in fiber, vitamins, and minerals
+                    and are often enjoyed dried.</p>
+            </div>
+            <!-- Food Item 61 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/turkeybreast-meat.png" alt="turkeybreast-meat.png">
+                </div>
+                <h3>Turkey Breast</h3>
+                <p>Turkey breast is a lean cut of meat that is high in protein and low in fat. It is often roasted or
+                    grilled and served as a main dish.</p>
+            </div>
+            <!-- Food Item 62 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/porkchop-meat.png" alt="porkchop-meat.png">
+                </div>
+                <h3>Pork Chop</h3>
+                <p>Pork chop is a cut of pork that comes from the loin. It is tender and flavorful, and it can be
+                    grilled, baked, or fried.</p>
+            </div>
+            <!-- Food Item 63 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/lamb-meat.png" alt="lamb-meat.png">
+                </div>
+                <h3>Lamb</h3>
+                <p>Lamb meat comes from young sheep and has a tender texture and a rich flavor. It is often roasted or
+                    grilled and served with various sauces.</p>
+            </div>
+            <!-- Food Item 64 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/bacon-meat.png" alt="bacon-meat.png">
+                </div>
+                <h3>Bacon</h3>
+                <p>Bacon is a cured meat made from pork belly. It is known for its salty, smoky flavor and crispy
+                    texture. It is often used as a breakfast side dish or added to sandwiches and salads.</p>
+            </div>
+            <!-- Food Item 65 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/ham-meat.png" alt="ham-meat.png">
+                </div>
+                <h3>Ham</h3>
+                <p>Ham is a cured meat made from the hind leg of a pig. It can be cooked and served in various ways,
+                    including baked, grilled, or sliced for sandwiches.</p>
+            </div>
+            <!-- Food Item 66 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/beefsteak-meat.png" alt="beefsteak-meat.png">
+                </div>
+                <h3>Beef Steak</h3>
+                <p>Beef steak is a cut of beef that is usually grilled or fried. It is tender and flavorful, and it can
+                    be served with sauces or toppings.</p>
+            </div>
+            <!-- Food Item 67 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/groundbeef-meat.png" alt="groundbeef-meat.png">
+                </div>
+                <h3>Ground Beef</h3>
+                <p>Ground beef is minced beef that is used in various dishes such as burgers, meatballs, and tacos. It
+                    is versatile and easy to cook.</p>
+            </div>
+            <!-- Food Item 68 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/chickenthighs-meat.png" alt="chickenthighs-meat.png">
+                </div>
+                <h3>Chicken Thighs</h3>
+                <p>Chicken thighs are a cut of chicken that contains more fat and flavor compared to chicken breast.
+                    They can be roasted, grilled, or braised.</p>
+            </div>
+            <!-- Food Item 69 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/chickenwings-meat.png" alt="chickenwings-meat.png">
+                </div>
+                <h3>Chicken Wings</h3>
+                <p>Chicken wings are a popular appetizer or snack that can be fried, baked, or grilled. They are often
+                    served with various sauces.</p>
+            </div>
+            <!-- Food Item 70 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/beefburger-meat.png" alt="beefburger-meat.png">
+                </div>
+                <h3>Beef Burger</h3>
+                <p>A beef burger is a sandwich consisting of a cooked beef patty between two slices of bread (usually a
+                    bun). It is a classic American dish often served with toppings like lettuce, tomato, and cheese.</p>
+            </div>
+            <!-- Food Item 71 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/pulledpork-meat.png" alt="pulledpork-meat.png">
+                </div>
+                <h3>Pulled Pork</h3>
+                <p>Pulled pork is a dish made from tender, slow-cooked pork shoulder. The meat is shredded and often
+                    mixed with barbecue sauce, then served on sandwiches or as a main dish.</p>
+            </div>
+            <!-- Food Item 72 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/lambchops-meat.png" alt="lambchops-meat.png">
+                </div>
+                <h3>Lamb Chops</h3>
+                <p>Lamb chops are small cuts of lamb meat taken from the rib, loin, or shoulder. They are tender and
+                    flavorful, often grilled or pan-fried.</p>
+            </div>
+            <!-- Food Item 73 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/sausages-meat.png" alt="sausages-meat.png">
+                </div>
+                <h3>Sausages</h3>
+                <p>Sausages are seasoned ground meat usually stuffed into casings. They can be made from pork, beef,
+                    chicken, or a combination of meats. They are often grilled, pan-fried, or boiled.</p>
+            </div>
+            <!-- Food Item 74 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/meatballs-meat.png" alt="meatballs-meat.png">
+                </div>
+                <h3>Meatballs</h3>
+                <p>Meatballs are small balls of ground meat mixed with breadcrumbs, eggs, and seasonings. They can be
+                    made from beef, pork, chicken, or veal and are often served with sauce or as part of pasta dishes.
+                </p>
+            </div>
+            <!-- Food Item 75 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/duckbreast-meat.png" alt="duckbreast-meat.png">
+                </div>
+                <h3>Duck Breast</h3>
+                <p>Duck breast is the meat from the breast of a duck. It has a rich, flavorful taste and can be roasted,
+                    grilled, or pan-seared.</p>
+            </div>
+            <!-- Food Item 76 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/venison-meat.png" alt="venison-meat.png">
+                </div>
+                <h3>Venison</h3>
+                <p>Venison is the meat of a deer. It is lean and rich in flavor, often used in dishes like stews,
+                    roasts, and steaks.</p>
+            </div>
+            <!-- Food Item 77 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/ribs-meat.png" alt="ribs-meat.png">
+                </div>
+                <h3>Ribs</h3>
+                <p>Ribs are cuts of meat from the ribcage of animals, commonly pork or beef. They are often grilled,
+                    smoked, or roasted and served with barbecue sauce.</p>
+            </div>
+            <!-- Food Item 78 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/liver-meat.png" alt="liver-meat.png">
+                </div>
+                <h3>Liver</h3>
+                <p>Liver is the organ meat of animals, often from cows or chickens. It is nutrient-dense and rich in
+                    vitamins and minerals. It can be pan-fried, grilled, or used in pâtés.</p>
+            </div>
+            <!-- Food Item 79 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/salami-meat.png" alt="salami-meat.png">
+                </div>
+                <h3>Salami</h3>
+                <p>Salami is a type of cured sausage made from fermented and air-dried meat, usually pork. It is often
+                    sliced and eaten as a snack or added to sandwiches and pizzas.</p>
+            </div>
+            <!-- Food Item 80 -->
+            <div class="food-item">
+                <div class="food-image-container">
+                    <!-- Placeholder Image -->
+                    <img src="static/images/prosciutto-meat.png" alt="prosciutto-meat.png">
+                </div>
+                <h3>Prosciutto</h3>
+                <p>Prosciutto is a type of dry-cured ham that is usually thinly sliced and served uncooked. It has a
+                    delicate flavor and is often used in charcuterie boards or as a topping for pizzas and salads.</p>
+            </div>
+
+        </div>
+        <div class="fun-fact-popup" id="fun-fact-popup">
+            <div class="fun-fact-content">
+                <button id="hide-fun-fact" class="close-button">X</button>
+                <h2>Did You Know?</h2>
+                <p id="fun-fact-text">Your fun fact will go here.</p>
+                <a href="{{ url_for('home') }}#fun-facts-section" id="more-fun-facts">More Fun Facts</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 BurnItNow. All rights reserved. 
+            <span class="footer-nav">
+                <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a> | 
+                <a href="{{ url_for('tos') }}">Terms of Service</a>
+            </span>
+        </p>
+    </footer>
+    
+    
+    <script src="{{ url_for('static', filename='nutrition-script.js') }}"></script>
+</body>
+
+</html>
